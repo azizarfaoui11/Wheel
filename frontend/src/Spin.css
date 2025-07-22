@@ -1,0 +1,111 @@
+.ui-wheel-of-fortune {
+  --_items: 8;
+  all: unset;
+  aspect-ratio: 1 / 1;
+  container-type: inline-size;
+  direction: ltr;
+  display: grid;
+  position: relative;
+  width: 32%;
+  margin: 0 auto; /* Center the wheel horizontally */
+  z-index: 2; /* Ensure it sits above the background circle */
+}
+
+.ui-wheel-of-fortune::before {
+  content: '';
+  position: absolute;
+  inset: -60px; /* Adjust this value to increase/decrease the border size */
+  background: url('../public/bigcercle.png') no-repeat center center;
+  background-size: contain; /* Ensure the circle stays within the container */
+  pointer-events: none;
+  z-index: 1; /* Should sit behind the wheel but above the background */
+}
+
+
+
+
+
+
+
+.ui-wheel-of-fortune > * {
+  position: absolute;
+}
+
+/* Button (centered) */
+.ui-wheel-of-fortune button {
+  aspect-ratio: 1 / 1;
+  background: linear-gradient(145deg, #f9ee16, #f97316);
+  border: 4px solid black;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 4cqi;
+  place-self: center;
+  width: 15cqi;
+  color: white;
+  text-shadow: 1px 1px 2px black, -1px -1px 2px black;
+  box-shadow: 
+    inset 2px 2px 6px rgba(255, 255, 255, 0.6),
+    inset -2px -2px 6px rgba(0, 0, 0, 0.6),
+    0 0 15px rgba(0, 0, 0, 0.8);
+  z-index: 2;
+}
+
+/* Gold circle in the middle */
+.ui-wheel-of-fortune .gold-circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100px; /* Adjust size as needed */
+  height: 100px; /* Adjust size as needed */
+  background: url('../public/cercle.png') no-repeat center center;
+  background-size: contain;
+  z-index: 2; /* Adjust the z-index to place it correctly */
+}
+
+
+.ui-wheel-of-fortune ul {
+  all: unset;
+  clip-path: inset(0 0 0 0 round 50%);
+  display: grid;
+  inset: 0;
+  place-content: center start;
+}
+
+.ui-wheel-of-fortune li {
+  align-content: center;
+  aspect-ratio: 1 / calc(2 * tan(180deg / var(--_items)));
+  clip-path: polygon(0% 0%, 100% 50%, 0% 100%);
+  display: grid;
+  font-size: 5cqi;
+  grid-area: 1 / -1;
+  padding-left: 1ch;
+  rotate: calc(360deg / var(--_items) * calc(var(--_idx) - 1));
+  transform-origin: center right;
+  user-select: none;
+  width: 50cqi;
+  color: white;
+}
+
+/* Sections */
+.ui-wheel-of-fortune li:nth-of-type(1) { --_idx: 1; background:  #18407f ;  }
+.ui-wheel-of-fortune li:nth-of-type(2) { --_idx: 2; background:white; } /* Blue */
+.ui-wheel-of-fortune li:nth-of-type(3) { --_idx: 3; background: #058d88; }
+.ui-wheel-of-fortune li:nth-of-type(4) { --_idx: 4; background:  white; } /* Green */
+.ui-wheel-of-fortune li:nth-of-type(5) { --_idx: 5; background: #18407f; }
+.ui-wheel-of-fortune li:nth-of-type(6) { --_idx: 6; background: white ; } /* Blue */
+.ui-wheel-of-fortune li:nth-of-type(7) { --_idx: 7; background:#058d88 ; }
+.ui-wheel-of-fortune li:nth-of-type(8) { --_idx: 8; background: white; } /* Green */
+
+/* Arrow */
+.ui-wheel-of-fortune .arrow {
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  width: 70px; /* Adjust width to match image size */
+  height: 70px; /* Adjust height to match image size */
+  background: url('../public/trigger.png') no-repeat center center;
+  background-size: contain;
+  transform: translateX(-50%) rotate(0deg); /* Adjust rotation if needed */
+  z-index: 3;
+}
