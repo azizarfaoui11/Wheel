@@ -1,5 +1,5 @@
 .ui-wheel-of-fortune {
-  --_items: 8;
+  --_items: 6;
   all: unset;
   aspect-ratio: 1 / 1;
   container-type: inline-size;
@@ -20,12 +20,6 @@
   pointer-events: none;
   z-index: 1; /* Should sit behind the wheel but above the background */
 }
-
-
-
-
-
-
 
 .ui-wheel-of-fortune > * {
   position: absolute;
@@ -88,14 +82,17 @@
 }
 
 /* Sections */
-.ui-wheel-of-fortune li:nth-of-type(1) { --_idx: 1; background:  #18407f ;  }
-.ui-wheel-of-fortune li:nth-of-type(2) { --_idx: 2; background:white; } /* Blue */
-.ui-wheel-of-fortune li:nth-of-type(3) { --_idx: 3; background: #058d88; }
-.ui-wheel-of-fortune li:nth-of-type(4) { --_idx: 4; background:  white; } /* Green */
-.ui-wheel-of-fortune li:nth-of-type(5) { --_idx: 5; background: #18407f; }
-.ui-wheel-of-fortune li:nth-of-type(6) { --_idx: 6; background: white ; } /* Blue */
-.ui-wheel-of-fortune li:nth-of-type(7) { --_idx: 7; background:#058d88 ; }
-.ui-wheel-of-fortune li:nth-of-type(8) { --_idx: 8; background: white; } /* Green */
+.ui-wheel-of-fortune li:nth-of-type(1) { --_idx: 1; background: #18407f; } /* Bleu foncé */
+.ui-wheel-of-fortune li:nth-of-type(2) { --_idx: 2; background: #f4c542; } /* Jaune doré */
+.ui-wheel-of-fortune li:nth-of-type(3) { --_idx: 3; background: #058d88; } /* Vert-bleu */
+.ui-wheel-of-fortune li:nth-of-type(4) { --_idx: 4; background: #e94e77; } /* Rose foncé */
+.ui-wheel-of-fortune li:nth-of-type(5) { --_idx: 5; background: #3b341f; } /* Bleu foncé */
+.ui-wheel-of-fortune li:nth-of-type(6) { --_idx: 6; background: #f4c542; } /* Jaune doré */
+
+
+
+
+
 
 /* Arrow */
 .ui-wheel-of-fortune .arrow {
@@ -108,4 +105,4 @@
   background-size: contain;
   transform: translateX(-50%) rotate(0deg); /* Adjust rotation if needed */
   z-index: 3;
-}
+} 

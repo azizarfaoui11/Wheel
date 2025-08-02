@@ -56,7 +56,7 @@ function Page2() {
     console.log('Form data before submission:', formData); // Debugging line
   
     try {
-      const response = await axios.post('https://polygame.tn/api/CreateUser', formData);
+      const response = await axios.post('http://localhost:5000/api/CreateUser', formData);
       console.log('User created:', response.data);
       localStorage.setItem('userId', response.data.id);
       toast.success('Utilisateur créé avec succès!', { closeOnClick: true });

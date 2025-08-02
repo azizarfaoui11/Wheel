@@ -30,7 +30,7 @@ function Page3() {
     try {
       // Update user information
       await axios.put(`
-       https://polygame.tn/api/UpdateUser/${userId}`, dataToSend);
+       http://localhost:5000/api/UpdateUser/${userId}`, dataToSend);
       toast.success('Information soumise avec succès!', { closeOnClick: true });
       
       // Navigate to the Spin page
@@ -72,7 +72,7 @@ function Page3() {
               <img
                 src="/ville.png"
                 alt="Ville"
-                className="w-[100px] h-[43px]" // Updated size
+                className="w-[100px] h-[43px]" 
               />
             </label>
             <input

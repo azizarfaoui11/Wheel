@@ -17,7 +17,7 @@ function Result2() {
       {/* Centered smaller image */}
       <img src="/result2.png" alt="Result" className="mb-8 w-[400px] h-[400px]" /> {/* Halved width and height */}
 
-      <Link to="/Profitez">
+      <Link to="/Merci">
         <button
           className="bg-no-repeat bg-center bg-cover py-2 px-12 rounded-full border-8 border-transparent shadow-none active:relative active:top-1 flex items-center justify-center mx-auto" // Halved padding
           style={{ backgroundImage: "url('/button.png')", width: '200px', height: '80px' }} // Halved width and height

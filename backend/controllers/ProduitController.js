@@ -62,7 +62,40 @@ exports.spinWheel = async (req, res) => {
 };
 
 
+exports.createProduit = async (req, res) => {
+  try {
+    const { productName, quantity, percentage } = req.body;
 
+
+
+    const produit = await Produit.create({ productName, quantity, percentage });
+
+    res.status(201).json(produit);
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: 'Erreur lors de la création du produit' });
+  }
+};
+
+exports.deleteProduit = async (req, res) => {
+  try {
+    const id = req.params.id;
+
+    const deleted = await Produit.destroy({
+      where: { id }
+    });
+
+    if (deleted) {
+      res.status(200).json({ message: 'Produit supprimé avec succès' });
+    } else {
+      res.status(404).json({ message: 'Produit non trouvé' });
+    }
+
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: 'Erreur lors de la suppression du produit' });
+  }
+};
 
 
 

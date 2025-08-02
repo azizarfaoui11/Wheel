@@ -17,7 +17,7 @@ function Result1() {
       {/* Centered smaller image */}
       <img src="/desole2.png" alt="Result" className="mb-4 w-[350px] h-[400px]" /> {/* Halved width and height */}
 
-      <Link to="/Profitez">
+      <Link to="/merci">
         <button
           className="bg-no-repeat bg-center bg-cover py-1 px-6 rounded-full border-8 border-transparent shadow-none active:relative active:top-1 flex items-center justify-center"
           style={{ backgroundImage: "url('/button.png')", width: '200px', height: '80px' }} // Halved width and height

@@ -29,7 +29,7 @@ function Reduction3() {
 
     try {
       // Make a PUT request to update the user's commande with the discounted pack
-      const response = await axios.put(`https://polygame.tn/api/UpdateUser/${userId}`, {
+      const response = await axios.put(`http://localhost:5000/api/UpdateUser/${userId}`, {
         commande: selectedPackName, // Posting the discounted pack name
       });
 

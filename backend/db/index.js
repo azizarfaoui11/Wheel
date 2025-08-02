@@ -8,7 +8,7 @@ const sequelize = new Sequelize("wheel", "root", "", {
    .then((r) => console.log("connected"))
    .catch((err) => console.log(err));
 
-   sequelize.sync({ alter: true })
+   sequelize.sync({ force: true })
   .then(() => {
      console.log("Database and tables created!");
    })

@@ -18,11 +18,8 @@ const Produit = sequelize.define('Produit', {
   percentage: {
     type: DataTypes.FLOAT,
     allowNull: false,
-  },
-  img: { // New image field
-    type: DataTypes.STRING, // You can use DataTypes.TEXT if URLs can be long
-    allowNull: false, // Allow null if image is optional
-  },
+  }
+  
 }, {
   tableName: 'produits', // Use 'produits' for the table name
   timestamps: false, // Set to true if you want createdAt and updatedAt fields
